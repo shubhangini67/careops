@@ -82,14 +82,11 @@ _tracer_provider = TracerProvider()
 # ConsoleSpanExporter floods dev logs — re-enable by adding BatchSpanProcessor(ConsoleSpanExporter())
 FastAPIInstrumentor.instrument_app(app, tracer_provider=_tracer_provider)
 
-# 3b. CORS Middleware
-# Allows the Next.js frontend (port 3000) to call the API (port 8000).
+# 3b. CORS Middleware — set CORS_ORIGINS on Render to your Vercel URL.
+_cors_origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=_cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

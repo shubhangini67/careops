@@ -137,6 +137,14 @@ docs/              Architecture, API, evaluation guides
 
 ---
 
+## Deploy (when ready)
+
+**Backend → [Render](https://render.com)** · **Frontend → [Vercel](https://vercel.com)**
+
+Step-by-step: [`docs/DEPLOY.md`](docs/DEPLOY.md) (Postgres, Redis, Qdrant Cloud, env vars, one-time seeds).
+
+---
+
 ## Author
 
 **[shubhangini67](https://github.com/shubhangini67)**

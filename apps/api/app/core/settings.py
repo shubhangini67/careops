@@ -36,6 +36,12 @@ class Settings(BaseSettings):
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
     jwt_access_token_expire_minutes: int = Field(default=60 * 24 * 7, alias="JWT_ACCESS_TOKEN_EXPIRE_MINUTES")
 
+    # Comma-separated browser origins allowed to call the API (Vercel URL in production).
+    cors_origins: str = Field(
+        default="http://localhost:3000,http://127.0.0.1:3000",
+        alias="CORS_ORIGINS",
+    )
+
     # Sentry error tracking (leave blank to disable)
     sentry_dsn: str = Field(default="", alias="SENTRY_DSN")
 

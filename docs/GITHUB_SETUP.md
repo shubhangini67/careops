@@ -9,9 +9,9 @@ Copy these into **https://github.com/shubhangini67/CareOps** → ⚙️ **Settin
 Agentic hospital operations copilot — LangGraph forecasting, policy RAG with citations, human-in-the-loop approvals. Synthetic data only.
 ```
 
-**Website** (optional, after deploy)
+**Website** (after Vercel deploy — see [`docs/DEPLOY.md`](DEPLOY.md))
 ```
-https://your-demo-url.vercel.app
+https://your-app.vercel.app
 ```
 
 ## Topics
