@@ -1,0 +1,57 @@
+[
+  {
+    "question": "Ran out of Garlic Bread at 8pm on a Friday. Needs better planning.",
+    "contexts": [
+      "Ran out of Garlic Bread at 8pm on a Friday. Needs better planning.",
+      "Ran out of Garlic Bread again on May 29. Third Friday in a row. Unacceptable!",
+      "Garlic bread and sides must be stocked sufficiently for Friday peak — minimum 80 portions.",
+      "Garlic bread and sides must be stocked sufficiently for Friday peak — minimum 80 portions."
+    ],
+    "answer": "Garlic bread and sides must be stocked sufficiently for Friday peak — the SOP requires a minimum of 80 portions. Guests reported running out at 8pm on a Friday. It happened again on May 29 — the third Friday in a row.",
+    "ground_truth": "Stock a minimum of 80 portions of garlic bread and sides for Friday peak per SOP. Three consecutive Friday stockouts indicate a recurring pre-service inventory gap."
+  },
+  {
+    "question": "Pasta at 1pm — waited 35 minutes for a simple Carbonara. Office lunch ruined.",
+    "contexts": [
+      "Pasta at 1pm — waited 35 minutes for a simple Carbonara. Office lunch ruined.",
+      "May 22 service was chaos — waited 50 minutes for a pizza that came out cold.",
+      "Fast lunch pacing matters more than broad menu experimentation.",
+      "Takeaway packaging, handoff speed, and cashier flow are high-sensitivity points."
+    ],
+    "answer": "Lunch pacing is the primary risk — a 35-minute Carbonara wait and a 50-minute pizza wait both confirm the kitchen is not meeting weekday lunch speed expectations. Fast pacing matters more than menu variety for this service window, and handoff speed and cashier flow are identified as high-sensitivity points that need attention.",
+    "ground_truth": "Prioritise fast lunch pacing over menu breadth. 35-minute pasta and 50-minute pizza waits show pacing failures. Handoff speed and cashier flow are high-sensitivity pressure points."
+  },
+  {
+    "question": "The Pepperoni Feast was cold when it arrived. Very disappointing.",
+    "contexts": [
+      "The Pepperoni Feast was cold when it arrived. Very disappointing.",
+      "May 22 service was chaos — waited 50 minutes for a pizza that came out cold.",
+      "Quality slippage under heavy volume is more damaging than small menu restraint.",
+      "Queue growth and delayed dispatch will be amplified under surge demand."
+    ],
+    "answer": "The Pepperoni Feast arrived cold. On May 22 a pizza also arrived cold after a 50-minute wait during a chaotic service. Quality slippage under heavy volume is more damaging than small menu restraint. Queue growth and delayed dispatch will be amplified under surge demand.",
+    "ground_truth": "Dispatch delays under surge cause cold food. Queue growth is amplified under surge demand. Quality slippage under heavy volume is more damaging than menu restraint."
+  },
+  {
+    "question": "Large group of 8 — seating took forever. No coordination from front of house.",
+    "contexts": [
+      "Large group of 8 — seating took forever. No coordination from front of house.",
+      "Caesar Salad came without croutons. Small thing but frustrating for a quick lunch.",
+      "Fast lunch pacing matters more than broad menu experimentation.",
+      "Takeaway packaging, handoff speed, and cashier flow are high-sensitivity points."
+    ],
+    "answer": "Front-of-house execution is falling short on two fronts: a group of 8 experienced prolonged seating with no coordination, and a Caesar Salad arrived without croutons. For weekday lunch, fast pacing matters more than menu experimentation, and handoff speed and cashier flow are high-sensitivity points — poor FOH coordination directly undermines both.",
+    "ground_truth": "FOH coordination for large groups and item completeness both failed. Fast pacing is the priority; handoff speed and cashier flow are high-sensitivity for weekday lunch."
+  },
+  {
+    "question": "Holiday Monday and you ran out of Mango Smoothie by 7pm. Disappointing.",
+    "contexts": [
+      "Holiday Monday and you ran out of Mango Smoothie by 7pm. Disappointing.",
+      "Ran out of Garlic Bread at 8pm on a Friday. Needs better planning.",
+      "Queue growth and delayed dispatch will be amplified under surge demand.",
+      "Quality slippage under heavy volume is more damaging than small menu restraint."
+    ],
+    "answer": "The restaurant ran out of Mango Smoothie by 7pm on a Holiday Monday. Garlic Bread also ran out at 8pm on a Friday. Queue growth and delayed dispatch will be amplified under surge demand. Quality slippage under heavy volume is more damaging than small menu restraint.",
+    "ground_truth": "Holiday stockouts mirror Friday peak failures. Surge demand amplifies queue growth and quality slippage. High-demand items need a holiday surge buffer to prevent stockouts."
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {"resourceType": "Observation", "id": "SYN-OBS-001", "status": "final", "code": {"text": "department_occupancy_pct"}, "valueQuantity": {"value": 87, "unit": "%"}, "effectiveDateTime": "2026-08-04T17:00:00Z", "component": [{"code": {"text": "department"}, "valueString": "Emergency"}]},
+  {"resourceType": "Observation", "id": "SYN-OBS-002", "status": "final", "code": {"text": "department_occupancy_pct"}, "valueQuantity": {"value": 72, "unit": "%"}, "effectiveDateTime": "2026-08-04T17:00:00Z", "component": [{"code": {"text": "department"}, "valueString": "General Medicine OPD"}]},
+  {"resourceType": "Observation", "id": "SYN-OBS-003", "status": "final", "code": {"text": "department_occupancy_pct"}, "valueQuantity": {"value": 94, "unit": "%"}, "effectiveDateTime": "2026-08-04T17:00:00Z", "component": [{"code": {"text": "department"}, "valueString": "ICU"}]},
+  {"resourceType": "Observation", "id": "SYN-OBS-004", "status": "final", "code": {"text": "department_occupancy_pct"}, "valueQuantity": {"value": 68, "unit": "%"}, "effectiveDateTime": "2026-08-04T17:00:00Z", "component": [{"code": {"text": "department"}, "valueString": "General Ward"}]},
+  {"resourceType": "Observation", "id": "SYN-OBS-005", "status": "final", "code": {"text": "opd_wait_minutes"}, "valueQuantity": {"value": 38, "unit": "min"}, "effectiveDateTime": "2026-08-04T17:00:00Z", "component": [{"code": {"text": "department"}, "valueString": "Cardiology OPD"}]}
+]

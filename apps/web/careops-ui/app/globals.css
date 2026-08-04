@@ -1,0 +1,581 @@
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/space-mono/400.css";
+@import "@fontsource/space-mono/700.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+
+@import "tailwindcss";
+
+/* Tailwind v4: dark: variant applies when an ancestor carries .dark,
+   not just prefers-color-scheme -- required for a user-controlled toggle. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ── Fonts ─────────────────────────────────────────────────────── */
+  --font-sans:    "Plus Jakarta Sans", sans-serif;
+  --font-mono:    "Space Mono", monospace;
+  --font-display: "Instrument Serif", Georgia, serif;
+
+  /* ── Ink palette (warm dark backgrounds) ───────────────────────── */
+  --color-ink-950: #070a12;
+  --color-ink-900: #0b1020;
+  --color-ink-850: #0e1426;
+  --color-ink-800: #131a2e;
+  --color-ink-700: #1b243d;
+  --color-ink-600: #283353;
+
+  /* ── Ember palette (amber/gold accent) ─────────────────────────── */
+  --color-ember-50:  #fff7ec;
+  --color-ember-200: #fad9a3;
+  --color-ember-300: #f5be73;
+  --color-ember-400: #efa345;
+  --color-ember-500: #e6892a;
+  --color-ember-600: #c46e1b;
+
+  /* ── Legacy violet tokens -- kept so existing components don't break */
+  --color-navy-950: #080c14;
+  --color-navy-900: #0d1320;
+  --color-navy-800: #121a2e;
+  --color-navy-700: #1a2540;
+  --color-navy-600: #1e2d4d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+
+  /* ── Theme-aware semantic tokens (light values = default) ───────
+     Referenced from components as bg-[var(--surface)] etc. Values
+     are flipped by the .dark class block below -- see P6-F09.
+     Warm stone/parchment neutrals (not cool blue-gray) so light mode
+     reads as considered/warm rather than generic SaaS gray-on-white --
+     matches the ink+ember warmth already established in dark mode. */
+  --color-surface-page:    #FFFF;
+  --color-surface:         #FFFEFB;
+  --color-surface-raised:  #FFFFFF;
+  --color-surface-sunken:  #F0ECE0;
+  --color-border-default:  #DDD0AC;
+  --color-border-soft:     #EBE5D4;
+  --color-text-primary:    #1D1810;
+  --color-text-soft:       #5C5340;
+  --color-text-faint:      #8A8069;
+  --color-text-ghost:      #AFA48A;
+  /* Swiggy's real brand orange (matches --color-hero-bg below), sampled
+     directly from Swiggy's own branding (#FF5200) -- #FC8019 was a close
+     approximation, not the actual color. */
+  --color-accent:          #FF5200;
+  --color-accent-soft:     rgba(255,82,0,0.10);
+
+  /* Dashboard hero card only -- Swiggy's own brand orange, lighter than
+     --color-accent. At this brightness white text loses contrast, so the
+     hero switches to dark text in light mode; dark mode keeps white text
+     against the deeper accent-based tone it already used. */
+  --color-hero-bg:         #FF5200;
+  --color-hero-text:       #1D1810;
+  --color-hero-text-soft:  rgba(29,24,16,0.72);
+  --color-hero-text-faint: rgba(29,24,16,0.52);
+
+  /* Semantic severity -- deliberately separate from --color-accent and
+     from any agent-category color, so status always reads consistently. */
+  --color-good:            #0E9F6E;
+  --color-good-soft:       rgba(14,159,110,0.10);
+  --color-caution:         #B45309;
+  --color-caution-soft:    rgba(180,83,9,0.10);
+  --color-critical:        #E11D48;
+  --color-critical-soft:   rgba(225,29,72,0.08);
+
+  /* /planning's "Today's context" card -- warm cream/ivory to match the rest
+     of the page's palette (a sky-blue version broke the visual language --
+     everything else on this page is warm). Kept as real CSS vars (not a
+     Tailwind arbitrary bg-[...] class) since that class wasn't rendering
+     reliably. */
+  --context-card-gradient: linear-gradient(160deg, rgba(255,247,237,0.95) 0%, rgba(253,230,199,0.55) 100%);
+  --context-card-border:   rgba(230,137,42,0.22);
+}
+
+.dark {
+  --color-surface-page:    #070a12;
+  --color-surface:         #0b1020;
+  --color-surface-raised:  #131a2e;
+  --color-surface-sunken:  #0e1426;
+  --color-border-default:  rgba(255,255,255,0.10);
+  --color-border-soft:     rgba(255,255,255,0.06);
+  --color-text-primary:    #e7eaf2;
+  --color-text-soft:       rgba(255,255,255,0.65);
+  --color-text-faint:      rgba(255,255,255,0.40);
+  --color-text-ghost:      rgba(255,255,255,0.25);
+  --color-accent:          #FF5200;
+  --color-accent-soft:     rgba(255,82,0,0.12);
+
+  --color-hero-bg:         #C96A1F;
+  --color-hero-text:       #ffffff;
+  --color-hero-text-soft:  rgba(255,255,255,0.9);
+  --color-hero-text-faint: rgba(255,255,255,0.6);
+
+  --color-good:            #34d399;
+  --color-good-soft:       rgba(52,211,153,0.10);
+  --color-caution:         #f5be73;
+  --color-caution-soft:    rgba(245,190,115,0.10);
+  --color-critical:        #fa1d3e;
+  --color-critical-soft:   rgba(251,113,133,0.10);
+
+  --context-card-gradient: linear-gradient(160deg, rgba(64,40,20,0.5) 0%, rgba(35,22,12,0.8) 100%);
+  --context-card-border:   rgba(230,137,42,0.3);
+}
+
+/* ── Reset & base ────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Without this, native controls (select, option, scrollbar on some
+   platforms) render using the OS's own dark/light preference regardless
+   of which theme the page itself is showing -- e.g. a <select> with no
+   explicit background looks dark even on a light-themed page if the OS
+   is set to dark mode. */
+:root  { color-scheme: light; }
+.dark  { color-scheme: dark; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  background-image:
+    radial-gradient(1100px 460px at 50% -180px, rgba(176,98,26,0.04), transparent 62%),
+    linear-gradient(rgba(180,160,120,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,160,120,0.035) 1px, transparent 1px);
+  background-size: auto, 56px 56px, 56px 56px;
+  background-attachment: fixed, scroll, scroll;
+}
+
+.dark body {
+  background-image:
+    radial-gradient(1100px 460px at 50% -180px, rgba(230,137,42,0.10), transparent 62%),
+    linear-gradient(rgba(180,160,120,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,160,120,0.04) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body { transition: none; }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface-page); }
+::-webkit-scrollbar-thumb { background: rgba(230,137,42,0.25); border-radius: 3px; }
+
+/* ── Display font helpers ────────────────────────────────────── */
+
+.display    { font-family: "Instrument Serif", Georgia, serif; letter-spacing: -0.01em; }
+.display-it { font-family: "Instrument Serif", Georgia, serif; font-style: italic; letter-spacing: -0.015em; }
+
+/* ── Background textures ─────────────────────────────────────── */
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(180,160,120,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,160,120,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.dot-bg {
+  background-image: radial-gradient(rgba(230,137,42,0.10) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* ── Surface effects ─────────────────────────────────────────── */
+
+.glass {
+  background: color-mix(in srgb, var(--color-surface) 66%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hairline      { box-shadow: inset 0 0 0 1px var(--color-border-soft); }
+.hairline-warm { box-shadow: inset 0 0 0 1px rgba(230,137,42,0.18); }
+.ring-warm     { box-shadow: 0 0 0 1px rgba(230,137,42,0.22), 0 24px 60px -20px rgba(230,137,42,0.18); }
+
+/* ── Primary button ──────────────────────────────────────────── */
+
+/* Real Swiggy brand orange (matches --color-accent/--color-hero-bg), white
+   text -- Swiggy's own app uses exactly this combination, not a darker
+   burnt-orange gradient with near-black text. */
+.btn-primary {
+  background: linear-gradient(180deg, #FF7A3D 0%, #FF5200 60%, #E64800 100%);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 1px 0 rgba(0,0,0,0.25),
+    0 14px 28px -12px rgba(255,82,0,0.55);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+
+/* Same orange + white text is too glaring against a near-black page --
+   deeper/less saturated gradient and a softer glow, still clearly the same
+   brand color, just toned down for a dark background. */
+.dark .btn-primary {
+  background: linear-gradient(180deg, #D9490A 0%, #C74208 60%, #B33A07 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 1px 0 rgba(0,0,0,0.4),
+    0 14px 28px -12px rgba(255,82,0,0.35);
+}
+.dark .btn-primary:hover { filter: brightness(1.1); }
+
+/* ── Chip dot prefix ─────────────────────────────────────────── */
+
+.chip-dot::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: currentColor;
+  margin-right: 8px;
+}
+
+/* ── Progress meter ──────────────────────────────────────────── */
+
+.meter { height: 4px; border-radius: 4px; background: var(--color-surface-sunken); overflow: hidden; }
+.meter > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #efa345, #e6892a);
+}
+
+/* ── Scenario card ───────────────────────────────────────────── */
+
+.scen { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.scen:hover { transform: translateY(-2px); border-color: rgba(230,137,42,0.35); }
+.scen.active {
+  border-color: rgba(230,137,42,0.55);
+  background: linear-gradient(180deg, rgba(230,137,42,0.10), rgba(230,137,42,0.02));
+}
+
+/* ── Chat markdown renderer ──────────────────────────────────── */
+
+.prose-chat p                { margin: 0 0 0.6em; line-height: 1.65; }
+.prose-chat p:last-child     { margin-bottom: 0; }
+.prose-chat strong           { color: var(--color-text-primary); font-weight: 600; }
+.prose-chat em               { color: var(--color-accent); font-style: italic; }
+.prose-chat ul               { margin: 0.5em 0; padding-left: 1.2em; list-style: disc; }
+.prose-chat ol               { margin: 0.5em 0; padding-left: 1.4em; list-style: decimal; }
+.prose-chat li               { margin: 0.25em 0; line-height: 1.6; }
+.prose-chat h1,.prose-chat h2,.prose-chat h3 { font-weight: 600; color: var(--color-text-primary); margin: 0.8em 0 0.4em; }
+.prose-chat h3               { font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); }
+.prose-chat code             { font-family: "Space Mono", monospace; font-size: 0.8em; background: var(--color-surface-sunken); border-radius: 4px; padding: 0.1em 0.35em; }
+.prose-chat hr               { border: none; border-top: 1px solid var(--color-border-soft); margin: 0.75em 0; }
+
+/* ── Status pulse ring ───────────────────────────────────────── */
+
+.pulse { position: relative; }
+.pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 99px;
+  border: 1px solid currentColor;
+  opacity: .5;
+  animation: pulse 1.6s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { transform: scale(.6); opacity: .6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── Num display (Instrument Serif figures) ──────────────────── */
+
+.num-display {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-feature-settings: "lnum","tnum";
+}
+
+/* ── Animated sparkline ──────────────────────────────────────── */
+
+.sparkline { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 1.8s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* ── Logo marquee ────────────────────────────────────────────── */
+
+.marquee-track { animation: marquee 38s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Animated bar chart ──────────────────────────────────────── */
+
+.bar { animation: bar 1s ease forwards; transform-origin: bottom; transform: scaleY(0); }
+@keyframes bar { to { transform: scaleY(1); } }
+
+.bar-shimmer {
+  background: linear-gradient(90deg, rgba(239,163,69,0.25), rgba(239,163,69,0.95), rgba(239,163,69,0.25));
+  background-size: 220% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+/* ── Card (legacy -- keeps existing components working) ───────── */
+
+.card {
+  /* --color-surface-raised, not --color-surface -- surface (#FFFEFB) sits
+     almost indistinguishable from the page bg (#FAF8F2); raised is pure
+     white in light mode and a full step lighter than the page in dark
+     mode, which is what actually makes a card read as "lifted." Border and
+     shadow are both a step stronger than a first pass here (was
+     rgba(...,0.06)/rgba(...,0.20)) -- too faint against the near-white page
+     to actually register as elevation, reading as a flat grey mass instead
+     of distinct lifted cards. */
+  background: var(--color-surface-raised);
+  /* Thin + faded gold in both themes -- just enough to register as an
+     edge, not a bold outline. */
+  border: 1px solid rgba(255,82,0,0.35);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(60,40,15,0.05), 0 2px 6px rgba(60,40,15,0.09), 0 18px 44px -12px rgba(60,40,15,0.24);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  will-change: transform;
+}
+
+.dark .card {
+  border: 1px solid rgba(255,82,0,0.35);
+  box-shadow: 0 0 0 1px rgba(255,82,0,0.06), 0 8px 32px rgba(0,0,0,0.55);
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 4px rgba(60,40,15,0.08), 0 20px 48px -10px rgba(60,40,15,0.26);
+  transform: translateY(-3px);
+}
+
+.dark .card:hover {
+  box-shadow: 0 0 0 1px rgba(230,137,42,0.12), 0 12px 40px rgba(0,0,0,0.6);
+}
+
+/* ── Elevated card variant (Analytics) ───────────────────────────
+   .card's own resting shadow (above) is tuned to be nearly invisible
+   until :hover -- correct for cards that are themselves click targets,
+   wrong for a dashboard of static info cards that never get a hover.
+   This gives real resting elevation without touching .card globally
+   and risking every other already-tuned page. */
+.card-lift {
+  box-shadow: 0 2px 6px rgba(20,15,5,0.07), 0 10px 28px -8px rgba(20,15,5,0.16), 0 24px 56px -20px rgba(20,15,5,0.18);
+}
+.dark .card-lift {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 10px 32px rgba(0,0,0,0.45);
+}
+
+/* ── Moving-border card (hero treatment) ──────────────────────────
+   A rotating gradient "beam" traces the card's edge instead of a static
+   shadow -- used sparingly (one hero per page, not every card) for a bit
+   of AI-briefing motion. Rotates an actual pseudo-element via `transform`
+   (not a CSS custom-property angle, which needs @property + relies on
+   support/toolchain behavior that didn't animate reliably here) --
+   `transform: rotate()` needs no interpolation trick and just works.
+   ::before is an oversized rotating conic disc; ::after re-covers the
+   center with the real card surface, leaving only a ring visible. */
+.moving-border-card {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 1.5rem; /* matches rounded-3xl -- explicit, not inherited,
+    since overflow:hidden on this element is what actually clips the
+    rotating disc below to this shape. */
+}
+.moving-border-card::before {
+  /* A rotated rectangle's own bounding box is bigger than the rectangle
+     itself (its corners swing outward at in-between angles) -- rotating
+     a box that was only ~card-sized let its corners fly outside the card
+     with nothing clipping them. Fix: this box is 2x the card in both
+     dimensions, centered, so rotation never exposes a gap or an edge --
+     and overflow:hidden above now actually clips it to the card shape. */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220%;
+  height: 220%;
+  z-index: -2;
+  transform: translate(-50%, -50%); /* base/reduced-motion frame -- keeps it
+    centered even when the keyframe animation below isn't running. */
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 250deg, #F59E0B 300deg, #FF5200 335deg, #FF5200 360deg);
+  animation: moving-border-spin 6s linear infinite;
+  will-change: transform; /* hints the browser to composite this on its own
+    GPU layer instead of repainting the rotated gradient every frame --
+    without this a rotating conic-gradient can visibly stutter. */
+}
+.moving-border-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  border-radius: calc(1.5rem - 2px);
+  /* Static (not animated) warm wash -- the "light color" touch on the card
+     itself, separate from the moving border so there's only one moving
+     element, not two competing for attention. */
+  background: radial-gradient(ellipse 700px 340px at 15% 0%, rgba(255,130,40,0.09), transparent 65%), var(--color-surface-raised);
+}
+@keyframes moving-border-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── Page canvas (clean white, cards carry the depth via their own
+   gold border/shadow now -- not a tinted/gray page wash). ────── */
+.page-canvas {
+  background: #FFFFFF;
+}
+
+.dark .page-canvas {
+  background: var(--color-surface-page);
+}
+
+
+.hero-illustration-light {
+  opacity: 1;
+}
+
+.hero-illustration-dark {
+  opacity: 0;
+}
+
+.dark .hero-illustration-light {
+  opacity: 0;
+}
+
+.dark .hero-illustration-dark {
+  opacity: 1;
+}
+
+/* ── Hero channel buttons (Action Center) ──────────────────────
+   Fixed low-opacity rgba tints read fine on a near-white light-mode card,
+   but the exact same opacity over dark mode's near-black surface barely
+   shifts the color at all -- the button stops reading as a distinct,
+   clickable element. Bumped stronger specifically for dark mode instead of
+   using one opacity for both. */
+.hero-instamart-btn {
+  background: var(--color-accent-soft);
+}
+
+.dark .hero-instamart-btn {
+  background: rgba(255,82,0,0.22);
+}
+
+.hero-whatsapp-btn {
+  background: rgba(37,211,102,0.14);
+  border-color: rgba(37,211,102,0.28);
+}
+
+.dark .hero-whatsapp-btn {
+  background: rgba(37,211,102,0.24);
+  border-color: rgba(37,211,102,0.4);
+}
+
+/* ── Tile (lighter elevation for small tinted cards) ────────────
+   .card hardcodes background/border for the common white-card case; tiles
+   like the pipeline/chooser cards need a custom per-tone background and
+   border color (set inline) but the same "lifted off the page" shadow --
+   without this they're flat bordered boxes with zero elevation, which is
+   what reads as a bare dev-panel grid instead of a real product surface. */
+.tile {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(60,40,15,0.04), 0 6px 16px -6px rgba(60,40,15,0.16);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.tile:hover {
+  box-shadow: 0 2px 4px rgba(60,40,15,0.06), 0 10px 24px -8px rgba(60,40,15,0.22);
+  transform: translateY(-2px);
+}
+.dark .tile {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 6px 20px rgba(0,0,0,0.4);
+}
+.dark .tile:hover {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.07), 0 10px 28px rgba(0,0,0,0.5);
+}
+
+.card:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent-soft), 0 10px 36px rgba(20,21,31,0.1);
+}
+
+/* ── Pills (legacy) ──────────────────────────────────────────── */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.pill-ready   { color: var(--color-good);     background: var(--color-good-soft);     border-color: var(--color-good-soft); }
+.pill-review  { color: var(--color-caution);  background: var(--color-caution-soft);  border-color: var(--color-caution-soft); }
+.pill-blocked { color: var(--color-critical); background: var(--color-critical-soft); border-color: var(--color-critical-soft); }
+.pill-unknown { color: var(--color-text-faint); background: var(--color-surface-sunken); border-color: var(--color-border-default); }
+
+/* ── Modal animations ────────────────────────────────────────── */
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);   }
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Stagger entrance animations ─────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stagger-1 { animation: fadeUp 0.4s ease 0.05s both; }
+.stagger-2 { animation: fadeUp 0.4s ease 0.10s both; }
+.stagger-3 { animation: fadeUp 0.4s ease 0.15s both; }
+.stagger-4 { animation: fadeUp 0.4s ease 0.20s both; }
+.stagger-5 { animation: fadeUp 0.4s ease 0.25s both; }
+.stagger-6 { animation: fadeUp 0.4s ease 0.30s both; }
+.stagger-7 { animation: fadeUp 0.4s ease 0.35s both; }
+
+/* ── Glow shadows ────────────────────────────────────────────── */
+
+.shadow-glow-ember   { box-shadow: 0 0 20px rgba(230,137,42,0.35); }
+.shadow-glow-emerald { box-shadow: 0 0 20px rgba(16,185,129,0.3);  }
+.shadow-glow-rose    { box-shadow: 0 0 20px rgba(244,63,94,0.3);   }
+
+/* ── Reduce motion ───────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-1,.stagger-2,.stagger-3,.stagger-4,
+  .stagger-5,.stagger-6,.stagger-7 { animation: none !important; }
+  .card { transition: border-color 0.2s ease, box-shadow 0.2s ease !important; transform: none !important; }
+  .bar  { animation: none !important; transform: scaleY(1) !important; }
+  .sparkline { animation: none !important; stroke-dashoffset: 0 !important; }
+  .marquee-track { animation: none !important; }
+  .moving-border-card::before { animation: none !important; background: #FF5200 !important; }
+}
+
+/* ── Font mono utility ───────────────────────────────────────── */
+
+.font-mono {
+  font-family: "Space Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}

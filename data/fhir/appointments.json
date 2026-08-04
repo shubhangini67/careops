@@ -1,0 +1,8 @@
+[
+  {"resourceType": "Appointment", "id": "SYN-APT-001", "status": "booked", "serviceCategory": [{"text": "General Medicine OPD"}], "start": "2026-08-05T09:00:00Z", "end": "2026-08-05T09:30:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-001"}}]},
+  {"resourceType": "Appointment", "id": "SYN-APT-002", "status": "booked", "serviceCategory": [{"text": "Cardiology OPD"}], "start": "2026-08-05T10:00:00Z", "end": "2026-08-05T10:45:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-002"}}]},
+  {"resourceType": "Appointment", "id": "SYN-APT-003", "status": "booked", "serviceCategory": [{"text": "Emergency"}], "start": "2026-08-05T11:00:00Z", "end": "2026-08-05T11:30:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-003"}}]},
+  {"resourceType": "Appointment", "id": "SYN-APT-004", "status": "booked", "serviceCategory": [{"text": "General Medicine OPD"}], "start": "2026-08-05T14:00:00Z", "end": "2026-08-05T14:30:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-004"}}]},
+  {"resourceType": "Appointment", "id": "SYN-APT-005", "status": "booked", "serviceCategory": [{"text": "ICU"}], "start": "2026-08-06T08:00:00Z", "end": "2026-08-06T12:00:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-005"}}]},
+  {"resourceType": "Appointment", "id": "SYN-APT-006", "status": "booked", "serviceCategory": [{"text": "General Ward"}], "start": "2026-08-05T16:00:00Z", "end": "2026-08-05T17:00:00Z", "participant": [{"actor": {"reference": "Patient/SYN-PAT-001"}}]}
+]

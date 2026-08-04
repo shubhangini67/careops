@@ -1,0 +1,452 @@
+[
+  {
+    "id": 110,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.95,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 88,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 89,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 114,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 91,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 92,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 93,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 100,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-06",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 112,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 115,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 117,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 118,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 119,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 120,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 121,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 122,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 125,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 126,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 136,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 137,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 140,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 141,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 142,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 97,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 98,
+    "scenario": "weekday_lunch",
+    "target_date": "2026-06-03",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 101,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 102,
+    "scenario": "weekday_lunch",
+    "target_date": "2026-06-10",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 103,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-06",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 104,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 123,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 106,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 107,
+    "scenario": "low_stock_weekend",
+    "target_date": "2026-06-07",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 108,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 109,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 111,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.92,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 94,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-06",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 90,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-06",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 99,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 146,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-13",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 113,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 139,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-13",
+    "critic_score": 0.9,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 138,
+    "scenario": "weekday_lunch",
+    "target_date": "2026-06-10",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 147,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 116,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 105,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-05",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 129,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-13",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 145,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 143,
+    "scenario": "weekday_lunch",
+    "target_date": "2026-06-10",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 124,
+    "scenario": "holiday_spike",
+    "target_date": "2026-06-13",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  },
+  {
+    "id": 144,
+    "scenario": "friday_rush",
+    "target_date": "2026-06-12",
+    "critic_score": 0.85,
+    "critic_verdict": "approved",
+    "has_shortage_alerts": false,
+    "inventory_restock_actions": []
+  }
+]

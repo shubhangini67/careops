@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pycache_tmp/
+.venv/
+venv/
+env/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code local settings
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+.next/
+out/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local data / logs
+*.log
+data/processed/*
+!data/processed/.gitkeep
+
+# Docker
+*.pid
+
+# Spreadsheets (except the project tracker)
+*.xls
+!CareOps AI_Progress_Tracker_v4.xlsx
+apps/api/.deepeval/

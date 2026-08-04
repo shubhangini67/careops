@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "careops": {
+      "command": "C:/dev/careops/apps/api/venv/Scripts/python.exe",
+      "args": ["C:/dev/careops/apps/api/mcp_server.py"],
+      "env": {
+        "CAREOPS_API_BASE": "http://localhost:8000/api/v1",
+        "CAREOPS_EMAIL": "verify@test.com",
+        "CAREOPS_PASSWORD": "test1234"
+      }
+    }
+  }
+}

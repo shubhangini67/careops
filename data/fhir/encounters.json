@@ -1,0 +1,7 @@
+[
+  {"resourceType": "Encounter", "id": "SYN-ENC-001", "status": "in-progress", "class": {"code": "AMB"}, "subject": {"reference": "Patient/SYN-PAT-001"}, "period": {"start": "2026-08-04T08:00:00Z"}, "serviceProvider": {"display": "Emergency"}, "type": [{"coding": [{"code": "EMER"}]}]},
+  {"resourceType": "Encounter", "id": "SYN-ENC-002", "status": "finished", "class": {"code": "AMB"}, "subject": {"reference": "Patient/SYN-PAT-002"}, "period": {"start": "2026-08-04T07:30:00Z", "end": "2026-08-04T09:00:00Z"}, "serviceProvider": {"display": "General Medicine OPD"}, "type": [{"coding": [{"code": "OUTPAT"}]}]},
+  {"resourceType": "Encounter", "id": "SYN-ENC-003", "status": "in-progress", "class": {"code": "IMP"}, "subject": {"reference": "Patient/SYN-PAT-003"}, "period": {"start": "2026-08-03T14:00:00Z"}, "serviceProvider": {"display": "ICU"}, "type": [{"coding": [{"code": "INPAT"}]}]},
+  {"resourceType": "Encounter", "id": "SYN-ENC-004", "status": "planned", "class": {"code": "AMB"}, "subject": {"reference": "Patient/SYN-PAT-004"}, "period": {"start": "2026-08-05T10:00:00Z"}, "serviceProvider": {"display": "Cardiology OPD"}, "type": [{"coding": [{"code": "OUTPAT"}]}]},
+  {"resourceType": "Encounter", "id": "SYN-ENC-005", "status": "in-progress", "class": {"code": "IMP"}, "subject": {"reference": "Patient/SYN-PAT-005"}, "period": {"start": "2026-08-04T06:00:00Z"}, "serviceProvider": {"display": "General Ward"}, "type": [{"coding": [{"code": "INPAT"}]}]}
+]

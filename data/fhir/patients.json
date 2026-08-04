@@ -1,0 +1,7 @@
+[
+  {"resourceType": "Patient", "id": "SYN-PAT-001", "gender": "unknown", "birthDate": "1985-01-01", "active": true},
+  {"resourceType": "Patient", "id": "SYN-PAT-002", "gender": "unknown", "birthDate": "1972-06-15", "active": true},
+  {"resourceType": "Patient", "id": "SYN-PAT-003", "gender": "unknown", "birthDate": "1990-11-22", "active": true},
+  {"resourceType": "Patient", "id": "SYN-PAT-004", "gender": "unknown", "birthDate": "1968-03-08", "active": true},
+  {"resourceType": "Patient", "id": "SYN-PAT-005", "gender": "unknown", "birthDate": "2001-09-30", "active": true}
+]

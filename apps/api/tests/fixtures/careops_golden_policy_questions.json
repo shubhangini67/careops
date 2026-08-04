@@ -1,0 +1,18 @@
+[
+  {"question": "What is the ED surge escalation threshold for occupancy?", "expected_policy": "POLICY-001", "category": "capacity"},
+  {"question": "When should ICU bed management escalate to bed management?", "expected_policy": "POLICY-002", "category": "capacity"},
+  {"question": "What nurse-to-bed ratio applies on general wards during peak hours?", "expected_policy": "POLICY-003", "category": "staffing"},
+  {"question": "Do critical PPE reorders require human approval?", "expected_policy": "POLICY-004", "category": "supplies"},
+  {"question": "Can patient names appear on operational dashboards?", "expected_policy": "POLICY-005", "category": "privacy"},
+  {"question": "What action is required when OPD wait exceeds 45 minutes?", "expected_policy": "POLICY-006", "category": "opd"},
+  {"question": "How quickly must moderate safety incidents be reviewed?", "expected_policy": "POLICY-007", "category": "safety"},
+  {"question": "When should the on-call operations lead be contacted?", "expected_policy": "POLICY-008", "category": "escalation"},
+  {"question": "Does CareOps provide medication or treatment advice?", "expected_policy": "POLICY-009", "category": "safety"},
+  {"question": "Must capacity forecasts be validated against staffing rosters?", "expected_policy": "POLICY-010", "category": "forecast"},
+  {"question": "How should departments respond to simultaneous high occupancy?", "expected_policy": "POLICY-008", "category": "capacity"},
+  {"question": "What supplies need approval before reorder above threshold?", "expected_policy": "POLICY-004", "category": "supplies"},
+  {"question": "What operational data can be shown on shared screens?", "expected_policy": "POLICY-005", "category": "privacy"},
+  {"question": "What is the platform scope regarding clinical decisions?", "expected_policy": "POLICY-009", "category": "safety"},
+  {"question": "What should trigger overflow clinic slots in OPD?", "expected_policy": "POLICY-006", "category": "opd"},
+  {"question": "How are 24-48 hour workload forecasts used operationally?", "expected_policy": "POLICY-010", "category": "forecast"}
+]
