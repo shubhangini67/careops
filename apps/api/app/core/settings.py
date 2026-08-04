@@ -20,6 +20,7 @@ class Settings(BaseSettings):
         alias="POSTGRES_URL",
     )
     qdrant_url: str = Field(default="http://localhost:6333", alias="QDRANT_URL")
+    qdrant_api_key: str = Field(default="", alias="QDRANT_API_KEY")
     redis_url: str = Field(default="redis://localhost:6379/0", alias="REDIS_URL")
 
     llm_provider: str = Field(default="groq", alias="LLM_PROVIDER")

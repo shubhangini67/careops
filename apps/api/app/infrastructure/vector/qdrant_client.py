@@ -4,12 +4,15 @@ import os
 
 # Qdrant connection setup
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "")
 
 # Matches the default output of text-embedding-004
 EMBEDDING_DIM = 3072
 
 def get_qdrant_client() -> QdrantClient:
     """Returns a connected Qdrant client."""
+    if QDRANT_API_KEY:
+        return QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
     return QdrantClient(url=QDRANT_URL)
 
 def ensure_collection(client: QdrantClient, collection_name: str) -> None:
