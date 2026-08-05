@@ -82,6 +82,8 @@ Set `CORS_ORIGINS` after Vercel gives you a URL (step 5). For preview deploys, c
 
 ### One-time seed (Render Shell)
 
+**Prerequisite:** `careops-api` → **Environment** must include `POSTGRES_URL` (Internal Database URL from `careops-postgres`). The blueprint wires this automatically; if deploy fails with `localhost:5432`, add it manually and redeploy.
+
 Open the web service → **Shell**, then:
 
 ```bash

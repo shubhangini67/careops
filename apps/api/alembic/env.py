@@ -12,11 +12,24 @@ import app.infrastructure.db.models  # noqa: F401
 
 
 config = context.config
-fileConfig(config.config_file_name)
+if config.config_file_name is not None:
+    fileConfig(config.config_file_name)
 target_metadata = Base.metadata
 
+
+def _database_url() -> str:
+    """Render/production: POSTGRES_URL env var. Local fallback: alembic.ini."""
+    url = os.getenv("POSTGRES_URL", "").strip()
+    if not url:
+        url = config.get_main_option("sqlalchemy.url") or ""
+    # SQLAlchemy 2.x expects postgresql:// (Render may supply postgres://)
+    if url.startswith("postgres://"):
+        url = "postgresql://" + url[len("postgres://") :]
+    return url
+
+
 def run_migrations_offline():
-    url = config.get_main_option("sqlalchemy.url")
+    url = _database_url()
     context.configure(
         url=url,
         target_metadata=target_metadata,
@@ -26,9 +39,12 @@ def run_migrations_offline():
     with context.begin_transaction():
         context.run_migrations()
 
+
 def run_migrations_online():
+    configuration = config.get_section(config.config_ini_section) or {}
+    configuration["sqlalchemy.url"] = _database_url()
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
+        configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
