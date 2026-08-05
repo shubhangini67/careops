@@ -58,7 +58,7 @@ Deploy when you are ready for a live demo URL. Local dev stays unchanged (`docke
 |-------|--------|
 | **Root directory** | `apps/api` |
 | **Runtime** | Python 3 |
-| **Build command** | `pip install -r requirements.txt` |
+| **Build command** | `pip install -r requirements-prod.txt` |
 | **Start command** | `alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
 | **Health check path** | `/api/v1/health` |
 

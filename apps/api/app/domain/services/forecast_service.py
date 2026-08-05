@@ -3,12 +3,12 @@ from sqlalchemy import func
 from datetime import datetime, timedelta
 from typing import Optional
 import pandas as pd
-from prophet import Prophet
 
 from app.infrastructure.db.models import Order
 from app.infrastructure.llm.base import BaseLLMProvider
 from app.infrastructure.llm.prompt_utils import PromptUtils
-from app.infrastructure.forecasting.prophet_forecaster import ProphetForecaster
+
+# ProphetForecaster imported lazily — optional in production (requirements-prod.txt).
 
 # Holiday demand multiplier (P6-A21) -- applied to Prophet's raw predicted_orders
 # when the target date is a known public holiday (INDIAN_HOLIDAYS_2026). Flat and
@@ -173,6 +173,8 @@ class ForecastService:
     def calculate_prophet_forecast(self, target_date: datetime | None = None) -> dict:
         """Calculate predicted demand for target Friday using Prophet."""
         try:
+            from app.infrastructure.forecasting.prophet_forecaster import ProphetForecaster
+
             df = self.get_daily_order_history(days_back=90)
 
             target_service_date = self._get_target_date(target_date)
@@ -211,6 +213,9 @@ class ForecastService:
                 "service_day_label": service_day_label,
             }
 
+        except ImportError:
+            print("Prophet not installed, falling back to baseline")
+            return self.calculate_baseline_forecast(target_date)
         except Exception as e:
             print(f"Prophet forecasting failed: {e}, falling back to baseline")
             return self.calculate_baseline_forecast(target_date)
