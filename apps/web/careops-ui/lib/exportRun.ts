@@ -4,10 +4,11 @@
 // helper, while relocating the "just-completed-run" export UI to /planning.
 
 import { getAuthToken } from "@/lib/auth-cookies";
+import { getApiBaseUrl } from "@/lib/apiBase";
 
 export async function downloadRunFile(url: string, filename: string): Promise<void> {
   const token = getAuthToken();
-  const base  = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+  const base  = getApiBaseUrl();
   const res   = await fetch(`${base}${url}`, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });

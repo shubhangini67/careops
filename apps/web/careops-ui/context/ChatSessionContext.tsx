@@ -9,7 +9,9 @@ import { createContext, useCallback, useContext, useRef, useState } from "react"
 import { getAuthToken } from "@/lib/auth-cookies";
 import { getChatSessions, getChatSession, deleteChatSession, ChatSessionSummary } from "@/lib/api";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+import { getApiBaseUrl } from "@/lib/apiBase";
+
+const BASE_URL = getApiBaseUrl();
 
 export interface ChatMessage {
   role: "user" | "assistant";

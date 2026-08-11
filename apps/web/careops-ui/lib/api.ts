@@ -13,7 +13,9 @@ import {
 import { ConciergeHealth, ConciergeSessionState } from "@/types/concierge";
 import { getAuthToken } from "@/lib/auth-cookies";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+import { getApiBaseUrl } from "@/lib/apiBase";
+
+const BASE_URL = getApiBaseUrl();
 
 function authHeaders(extra?: Record<string, string>): Record<string, string> {
   const token = getAuthToken();

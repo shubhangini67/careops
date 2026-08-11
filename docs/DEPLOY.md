@@ -111,13 +111,19 @@ Verify: `GET https://careops-api.onrender.com/api/v1/health/dependencies` — Po
 | **Framework** | Next.js (auto-detected) |
 | **Build command** | `npm run build` (default) |
 
-3. **Environment variable:**
+3. **Environment variable** (either works):
+
+```bash
+API_BASE_URL=https://careops-api.onrender.com
+```
+
+Server-side proxy — browser calls same-origin `/api/...`, no CORS needed.
+
+Or direct (requires `CORS_ORIGINS` on Render):
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=https://careops-api.onrender.com
 ```
-
-No trailing slash. Redeploy after changing this.
 
 4. Deploy → copy URL (e.g. `https://careops.vercel.app`).
 
