@@ -6,7 +6,7 @@ const PUBLIC_ROUTES = ["/", "/login", "/register", "/concierge"];
 // Auth pages — redirect away if already logged in
 const AUTH_ONLY_ROUTES = ["/login", "/register"];
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const isPublic = PUBLIC_ROUTES.some((r) => pathname === r || pathname.startsWith(r + "/"));
   const isAuthOnly = AUTH_ONLY_ROUTES.some((r) => pathname === r || pathname.startsWith(r + "/"));
