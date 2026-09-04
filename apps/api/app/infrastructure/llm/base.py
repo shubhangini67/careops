@@ -27,6 +27,7 @@ def reset_llm_usage_node(token: contextvars.Token) -> None:
 _COST_PER_1M = {
     "gemini-2.5-flash":        {"input": 0.075, "output": 0.30},
     "llama-3.3-70b-versatile": {"input": 0.59,  "output": 0.79},
+    "openai/gpt-oss-120b":     {"input": 0.15,  "output": 0.60},
     "deepseek-v4-flash":       {"input": 0.12,  "output": 0.24},   # via CometAPI
     "deepseek-v4-pro":         {"input": 0.416, "output": 0.832},  # via CometAPI
     "gemini-3.5-flash":        {"input": 1.20,  "output": 7.20},   # via CometAPI

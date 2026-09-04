@@ -57,7 +57,7 @@ log = structlog.get_logger()
 _DINEOUT_ID_LINE_RE = re.compile(r'^\d+\.\s+(?P<name>.+?)\s+—.*\(ID:\s*(?P<id>\d+)\)', re.MULTILINE)
 _DINEOUT_COORD_RE = re.compile(r'latitude=([\d.]+),\s*longitude=([\d.]+)')
 
-_MODEL = "llama-3.3-70b-versatile"
+_MODEL = "openai/gpt-oss-120b"  # Groq replacement for retired llama-3.3-70b-versatile
 _MAX_TOKENS = 1024
 _MAX_TOOL_ITERATIONS = 4  # one more than chat_service.py's 3 -- concierge tool
                           # chains run slightly longer (e.g. find_venues then

@@ -31,7 +31,7 @@ from app.infrastructure.swiggy.enrichers.occupancy import OccupancyEnricher
 # dropped in this app (no logging.basicConfig() is ever called).
 logger = structlog.get_logger()
 
-_MODEL = "llama-3.3-70b-versatile"
+_MODEL = "openai/gpt-oss-120b"  # Groq replacement for retired llama-3.3-70b-versatile
 _MAX_TOKENS = 1024
 _MAX_RUNS = 10
 _MAX_TOOL_ITERATIONS = 3

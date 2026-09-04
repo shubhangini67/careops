@@ -23,7 +23,7 @@ class GroqProvider(BaseLLMProvider):
 
         self.client = Groq(api_key=api_key)
         self.provider_name = "groq"
-        self.model = "llama-3.3-70b-versatile"  # best free model on Groq for reasoning
+        self.model = "openai/gpt-oss-120b"  # Groq replacement for retired llama-3.3-70b-versatile
 
     async def complete(
         self, prompt: str, system_prompt: str | None = None, temperature: float | None = None,

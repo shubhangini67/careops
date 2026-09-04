@@ -235,7 +235,7 @@ export default function ChatPage() {
 
                 {/* Model badge */}
                 <p className="mt-6 text-center text-[9px] uppercase tracking-[0.22em] text-[var(--color-text-ghost)]">
-                  llama-3.3-70b · RAG over your runs & feedback
+                  gpt-oss-120b · RAG over your runs & feedback
                 </p>
               </div>
             )}
